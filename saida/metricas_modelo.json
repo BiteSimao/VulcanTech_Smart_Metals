@@ -1,0 +1,230 @@
+{
+  "Random Forest": {
+    "recall_macro_falhas": 0.7553,
+    "matriz_confusao": [
+      [
+        2539,
+        2,
+        22,
+        0
+      ],
+      [
+        8,
+        96,
+        6,
+        22
+      ],
+      [
+        20,
+        2,
+        142,
+        4
+      ],
+      [
+        6,
+        32,
+        4,
+        95
+      ]
+    ],
+    "relatorio": {
+      "Normal": {
+        "precision": 0.9867858530897785,
+        "recall": 0.9906359734685914,
+        "f1-score": 0.9887071651090342,
+        "support": 2563.0
+      },
+      "Desgaste de ferramenta": {
+        "precision": 0.7272727272727273,
+        "recall": 0.7272727272727273,
+        "f1-score": 0.7272727272727273,
+        "support": 132.0
+      },
+      "Falha de refrigeração": {
+        "precision": 0.8160919540229885,
+        "recall": 0.8452380952380952,
+        "f1-score": 0.8304093567251462,
+        "support": 168.0
+      },
+      "Desalinhamento ou trinca": {
+        "precision": 0.7851239669421488,
+        "recall": 0.6934306569343066,
+        "f1-score": 0.7364341085271318,
+        "support": 137.0
+      },
+      "accuracy": 0.9573333333333334,
+      "macro avg": {
+        "precision": 0.8288186253319108,
+        "recall": 0.8141443632284302,
+        "f1-score": 0.8207058394085098,
+        "support": 3000.0
+      },
+      "weighted avg": {
+        "precision": 0.9565991910720129,
+        "recall": 0.9573333333333334,
+        "f1-score": 0.956818902990832,
+        "support": 3000.0
+      }
+    },
+    "atributos_mais_relevantes": [
+      {
+        "atributo": "numericas__torque_fuso_nm_relativo_liga",
+        "importancia": 0.1426
+      },
+      {
+        "atributo": "numericas__corrente_estator_amp",
+        "importancia": 0.0865
+      },
+      {
+        "atributo": "numericas__temperatura_fuso_c_relativo_liga",
+        "importancia": 0.0852
+      },
+      {
+        "atributo": "numericas__pressao_hidraulica_bar",
+        "importancia": 0.0792
+      },
+      {
+        "atributo": "numericas__vibracao_triaxial_rms_mms_relativo_liga",
+        "importancia": 0.0677
+      },
+      {
+        "atributo": "numericas__torque_fuso_nm",
+        "importancia": 0.0523
+      },
+      {
+        "atributo": "numericas__nivel_ruido_db",
+        "importancia": 0.0474
+      },
+      {
+        "atributo": "numericas__temperatura_fuso_c",
+        "importancia": 0.0464
+      },
+      {
+        "atributo": "numericas__vibracao_triaxial_rms_mms",
+        "importancia": 0.0419
+      },
+      {
+        "atributo": "numericas__iem",
+        "importancia": 0.0399
+      }
+    ]
+  },
+  "Extra Trees": {
+    "recall_macro_falhas": 0.746,
+    "matriz_confusao": [
+      [
+        2559,
+        0,
+        4,
+        0
+      ],
+      [
+        9,
+        102,
+        3,
+        18
+      ],
+      [
+        38,
+        2,
+        126,
+        2
+      ],
+      [
+        14,
+        24,
+        1,
+        98
+      ]
+    ],
+    "relatorio": {
+      "Normal": {
+        "precision": 0.9767175572519083,
+        "recall": 0.998439328911432,
+        "f1-score": 0.9874590005788153,
+        "support": 2563.0
+      },
+      "Desgaste de ferramenta": {
+        "precision": 0.796875,
+        "recall": 0.7727272727272727,
+        "f1-score": 0.7846153846153846,
+        "support": 132.0
+      },
+      "Falha de refrigeração": {
+        "precision": 0.9402985074626866,
+        "recall": 0.75,
+        "f1-score": 0.8344370860927153,
+        "support": 168.0
+      },
+      "Desalinhamento ou trinca": {
+        "precision": 0.8305084745762712,
+        "recall": 0.7153284671532847,
+        "f1-score": 0.7686274509803922,
+        "support": 137.0
+      },
+      "accuracy": 0.9616666666666667,
+      "macro avg": {
+        "precision": 0.8860998848227165,
+        "recall": 0.8091237671979974,
+        "f1-score": 0.8437847305668269,
+        "support": 3000.0
+      },
+      "weighted avg": {
+        "precision": 0.9600881365024406,
+        "recall": 0.9616666666666667,
+        "f1-score": 0.9599713468335416,
+        "support": 3000.0
+      }
+    },
+    "atributos_mais_relevantes": [
+      {
+        "atributo": "numericas__torque_fuso_nm_relativo_liga",
+        "importancia": 0.1084
+      },
+      {
+        "atributo": "numericas__corrente_estator_amp",
+        "importancia": 0.0756
+      },
+      {
+        "atributo": "numericas__temperatura_fuso_c_relativo_liga",
+        "importancia": 0.0644
+      },
+      {
+        "atributo": "numericas__torque_fuso_nm",
+        "importancia": 0.0622
+      },
+      {
+        "atributo": "numericas__pressao_hidraulica_bar",
+        "importancia": 0.0614
+      },
+      {
+        "atributo": "numericas__nivel_ruido_db",
+        "importancia": 0.0605
+      },
+      {
+        "atributo": "numericas__vibracao_triaxial_rms_mms_relativo_liga",
+        "importancia": 0.0494
+      },
+      {
+        "atributo": "categoricas__liga_metalica_Liga_Titanio_Ti6Al4V",
+        "importancia": 0.0469
+      },
+      {
+        "atributo": "numericas__iem",
+        "importancia": 0.0463
+      },
+      {
+        "atributo": "numericas__temperatura_fuso_c",
+        "importancia": 0.043
+      }
+    ]
+  },
+  "modelo_escolhido": "Random Forest",
+  "oee_simulado": {
+    "disponibilidade": 0.8936,
+    "desempenho": 0.95,
+    "qualidade": 0.9554,
+    "oee": 0.811,
+    "observacao": "Estimativa didática: o CSV não contém tempos produtivos, ciclos ou refugo real."
+  }
+}

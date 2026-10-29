@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f8">
+  <title>VulcanTech | Inteligência de fábrica</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/vision.css">
+  <link rel="stylesheet" href="/inspection-results.css">
+  <link rel="stylesheet" href="/theme.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#inicio" aria-label="VulcanTech início">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span class="brand-copy"><strong>VULCANTECH</strong><small>SMART METALS</small></span>
+      </a>
+      <div class="side-label">PLATAFORMA</div>
+      <nav class="side-nav" aria-label="Navegação principal">
+        <a class="active" href="#inicio"><span class="nav-icon">◫</span>Visão geral</a>
+        <a href="#analise"><span class="nav-icon">⌁</span>Análise de sensores</a>
+        <a href="#qualidade"><span class="nav-icon">◇</span>Qualidade visual</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-label">AMBIENTE</div>
+        <div class="environment"><span class="status-dot"></span><span><strong>Modo demonstração</strong><small>Dados do projeto integrador</small></span></div>
+        <div class="side-foot">VulcanTech Smart Metals<br>Projeto Integrador · 2026</div>
+      </div>
+    </aside>
+
+    <main id="inicio" class="main-content">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Operações</span><b>/</b><strong>Visão geral</strong></div>
+        <div class="topbar-right"><span id="connection-pill" class="connection-pill"><i></i>Carregando dados</span><button id="theme-toggle" class="icon-button theme-toggle" type="button" title="Ativar tema escuro" aria-label="Ativar tema escuro" aria-pressed="false">☾</button><button id="refresh-button" class="icon-button" title="Atualizar dados" aria-label="Atualizar dados">↻</button><span class="avatar">VT</span></div>
+      </header>
+
+      <section class="page-heading">
+        <div><div class="eyebrow">CENTRO DE OPERAÇÕES <span>•</span> INDÚSTRIA 4.0</div><h1>Visão geral</h1><p>Acompanhe os sinais de processo e a condição das células de manufatura.</p></div>
+        <div class="heading-meta"><span class="meta-label">ÚLTIMO REGISTRO NA BASE</span><strong id="last-updated">—</strong><small>Horário do conjunto de dados</small></div>
+      </section>
+
+      <section class="filter-bar" aria-label="Filtros do painel">
+        <label><span>Célula</span><select id="cell-filter"><option value="all">Todas as células</option></select></label>
+        <label><span>Liga metálica</span><select id="alloy-filter"><option value="all">Todas as ligas</option></select></label>
+        <div class="period-filter"><span>Período</span><div class="segmented"><button data-days="1">24 horas</button><button data-days="7" class="selected">7 dias</button><button data-days="all">Tudo</button></div></div>
+        <div class="filter-note"><span class="filter-icon">⌕</span><span>Filtros aplicados aos dados históricos</span></div>
+      </section>
+
+      <section class="kpi-grid" aria-label="Indicadores principais">
+        <article class="kpi-card"><div class="kpi-top"><span>Registros no período</span><span class="kpi-icon blue">▦</span></div><div id="kpi-records" class="kpi-value">—</div><div class="kpi-foot"><span class="neutral-dot"></span><span>Pontos de telemetria selecionados</span></div></article>
+        <article class="kpi-card"><div class="kpi-top"><span>Falhas registradas</span><span class="kpi-icon amber">⌁</span></div><div id="kpi-failures" class="kpi-value">—</div><div id="kpi-failures-foot" class="kpi-foot"><span class="neutral-dot"></span><span>Classes 1, 2 e 3 na base</span></div></article>
+        <article class="kpi-card"><div class="kpi-top"><span>Células monitoradas</span><span class="kpi-icon green">◈</span></div><div id="kpi-cells" class="kpi-value">—</div><div class="kpi-foot"><span class="green-dot"></span><span>Com registros no período</span></div></article>
+        <article class="kpi-card"><div class="kpi-top"><span>OEE estimado</span><span class="kpi-icon violet">◷</span></div><div id="kpi-oee" class="kpi-value">—</div><div id="kpi-oee-foot" class="kpi-foot"><span class="neutral-dot"></span><span>Aguardando avaliação do modelo</span></div></article>
+      </section>
+
+      <section class="content-grid" id="analise">
+        <article class="panel trend-panel">
+          <div class="panel-heading"><div><div class="panel-kicker">COMPORTAMENTO DO PROCESSO</div><h2>Tendência dos sensores</h2><p>Média horária no período selecionado</p></div><label class="compact-select"><span class="sr-only">Sinal do sensor</span><select id="sensor-filter"><option value="temperatura_fuso_c">Temperatura do fuso</option><option value="vibracao_triaxial_rms_mms">Vibração RMS</option><option value="torque_fuso_nm">Torque do fuso</option><option value="vazao_refrigerante_lmin">Vazão de refrigerante</option><option value="corrente_estator_amp">Corrente do estator</option><option value="pressao_hidraulica_bar">Pressão hidráulica</option></select></label></div>
+          <div class="chart-legend"><span><i class="legend-line"></i><b id="chart-series-name">Temperatura do fuso</b><span id="chart-live-status" class="chart-live-status" title="Leituras simuladas para demonstração; não vêm de um equipamento conectado."><i></i>DEMO AO VIVO</span></span><span id="chart-unit">°C</span></div>
+          <div class="chart-wrap"><canvas id="trend-chart" aria-label="Gráfico de tendência do sensor. Passe o mouse sobre a linha para ver data, hora e valor." role="img" tabindex="0"></canvas><div id="chart-tooltip" class="chart-tooltip" role="tooltip"></div><div id="chart-empty" class="chart-empty hidden">Não há leituras para esta combinação de filtros.</div></div>
+          <div class="chart-footer"><span>Histórico CSV + leituras simuladas</span><span id="chart-range">—</span></div>
+        </article>
+
+        <article class="panel faults-panel">
+          <div class="panel-heading"><div><div class="panel-kicker">DISTRIBUIÇÃO</div><h2>Falhas por categoria</h2><p>Ocorrências registradas no período</p></div><span class="panel-menu">•••</span></div>
+          <div id="fault-chart" class="fault-chart"></div>
+          <div class="fault-foot"><span class="fault-total-dot"></span><span>Falhas no recorte</span><strong id="fault-total">—</strong></div>
+          <div class="chart-footer"><span>Classe 0 (normal) não exibida</span><span>Dados históricos</span></div>
+        </article>
+      </section>
+
+      <section class="content-grid lower-grid">
+        <article class="panel cells-panel">
+          <div class="panel-heading"><div><div class="panel-kicker">ACOMPANHAMENTO</div><h2>Resumo das células</h2><p>Última medição disponível por célula</p></div><span class="table-count" id="cell-count">4 células</span></div>
+          <div class="table-scroll"><table><thead><tr><th>CÉLULA</th><th>ÚLTIMA LEITURA</th><th>TEMPERATURA</th><th>VIBRAÇÃO RMS</th><th>VAZÃO</th><th>CONDIÇÃO FÍSICA</th></tr></thead><tbody id="cell-table"></tbody></table></div>
+          <div class="table-note">Condição calculada pelos limites físicos configurados. Não representa previsão do modelo.</div>
+        </article>
+        <article class="panel events-panel">
+          <div class="panel-heading"><div><div class="panel-kicker">RASTREABILIDADE</div><h2>Últimas ocorrências</h2><p>Falhas anotadas no conjunto de dados</p></div><a class="text-link" href="#previsao">Ver previsão <span>→</span></a></div>
+          <div id="events-list" class="events-list"></div>
+          <div id="events-empty" class="events-empty hidden">Nenhuma falha registrada neste período.</div>
+        </article>
+      </section>
+
+      <section class="content-grid quality-grid" id="qualidade">
+        <article class="panel quality-panel"><div class="panel-heading"><div><div class="panel-kicker">VISÃO COMPUTACIONAL · OPENCV</div><h2>Inspeção de soldagem</h2><p>Envie uma imagem para comparar com os critérios internos de referência</p></div><span class="demo-badge">ANÁLISE VISUAL</span></div><div class="image-pair"><figure class="inspection-figure"><label class="image-upload" id="weld-dropzone" for="weld-file"><div class="upload-empty" id="weld-empty"><span>＋</span><strong>Adicionar foto do cordão</strong><small>JPG ou PNG · até 12 MB</small></div><img id="weld-preview" class="uploaded-preview" alt="Imagem do cordão enviada para análise"><span class="upload-hint">Trocar imagem</span></label><input id="weld-file" class="file-input" type="file" accept="image/*"><figcaption><span>Cordão de solda</span><small>Canny · contornos · comparação com referência interna</small></figcaption><button id="inspect-weld" class="inspect-button" disabled>Selecione uma imagem</button><div id="weld-result" class="inspection-result">A decisão aparece após o envio da imagem.</div></figure><figure class="inspection-figure"><label class="image-upload" id="thermal-dropzone" for="thermal-file"><div class="upload-empty" id="thermal-empty"><span>＋</span><strong>Adicionar imagem térmica</strong><small>JPG ou PNG · até 12 MB</small></div><img id="thermal-preview" class="uploaded-preview" alt="Imagem térmica enviada para análise"><span class="upload-hint">Trocar imagem</span></label><input id="thermal-file" class="file-input" type="file" accept="image/*"><figcaption><span>Perfil térmico HAZ</span><small>HSV · região quente · comparação com referência interna</small></figcaption><label class="threshold-control"><span>Limiar de brilho</span><input id="thermal-threshold" type="range" min="120" max="250" value="205"><output id="thermal-threshold-value">205</output></label><button id="inspect-thermal" class="inspect-button" disabled>Selecione uma imagem</button><div id="thermal-result" class="inspection-result">A decisão aparece após o envio da imagem.</div></figure></div><div class="quality-disclaimer"><span>ⓘ</span> As referências ficam internas. A decisão é uma triagem heurística e requer validação industrial.</div></article>
+        <article class="panel prediction-panel" id="previsao"><div class="panel-heading"><div><div class="panel-kicker">INFERÊNCIA REST</div><h2>Previsão de falha</h2><p>Experimente a API com a última leitura da célula</p></div><span id="api-status" class="api-badge offline"><i></i>API não conectada</span></div><label class="prediction-label" for="prediction-cell">Célula de origem</label><select id="prediction-cell" class="prediction-select"><option value="CEL-201">CEL-201</option><option value="CEL-202">CEL-202</option><option value="CEL-203">CEL-203</option><option value="CEL-204">CEL-204</option></select><button id="predict-button" class="primary-button" disabled><span>⌁</span> Analisar última leitura <b>→</b></button><div id="prediction-result" class="prediction-result"><span class="result-placeholder">A previsão aparecerá aqui quando a API estiver ativa.</span></div><div class="prediction-note">A inferência depende do modelo treinado e da API em <code>localhost:8000</code>.</div></article>
+      </section>
+
+      <footer class="page-footer"><span>VulcanTech Smart Metals <b>·</b> Painel de demonstração</span><span>Dados de origem: arquivo de sensores fornecido no projeto</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/dashboard.js" defer></script>
+</body>
+</html>

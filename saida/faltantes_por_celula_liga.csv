@@ -1,0 +1,13 @@
+id_celula,liga_metalica,temperatura_fuso_c,vibracao_triaxial_rms_mms,torque_fuso_nm,vazao_refrigerante_lmin,corrente_estator_amp,pressao_hidraulica_bar,nivel_ruido_db
+CEL-201,Aco_Carbono_316L,2.28,2.2,0.0,2.03,0.0,0.0,0.0
+CEL-201,Aluminio_7075,3.31,1.78,0.0,1.53,0.0,0.0,0.0
+CEL-201,Liga_Titanio_Ti6Al4V,2.05,2.46,0.0,2.05,0.0,0.0,0.0
+CEL-202,Aco_Carbono_316L,3.66,2.49,0.0,2.57,0.0,0.0,0.0
+CEL-202,Aluminio_7075,1.91,2.29,0.0,1.65,0.0,0.0,0.0
+CEL-202,Liga_Titanio_Ti6Al4V,1.96,2.54,0.0,1.96,0.0,0.0,0.0
+CEL-203,Aco_Carbono_316L,2.67,3.24,0.0,1.13,0.0,0.0,0.0
+CEL-203,Aluminio_7075,1.55,2.26,0.0,1.69,0.0,0.0,0.0
+CEL-203,Liga_Titanio_Ti6Al4V,2.62,2.21,0.0,1.01,0.0,0.0,0.0
+CEL-204,Aco_Carbono_316L,2.53,2.61,0.0,3.43,0.0,0.0,0.0
+CEL-204,Aluminio_7075,1.98,3.44,0.0,2.25,0.0,0.0,0.0
+CEL-204,Liga_Titanio_Ti6Al4V,2.23,1.82,0.0,1.42,0.0,0.0,0.0
